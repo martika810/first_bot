@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: bucket to store source code
+Reources:
+  SourceCodeBucket:
+    Type: AWS::s3::Bucket
+    DeletionPolicy: Retain
+    Properties:
