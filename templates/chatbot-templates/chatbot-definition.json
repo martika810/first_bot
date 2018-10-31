@@ -1,0 +1,71 @@
+{
+  "bot": {
+    "abortStatement": {
+      "messages": [
+        {
+          "content": "Sorry, I quit, you are weird",
+          "contentType": "PlainText"
+        }
+      ]
+    },
+    "childDirected": false,
+    "clarificationPrompt": {
+      "maxAttempts": 2,
+      "messages": [
+        {
+          "content": "I don't understand, can you repeat what you want?",
+          "contentType": "PlainText"
+        }
+      ]
+    },
+    "description": "Not very clever bot",
+    "idleSessionTTLInSeconds": 600,
+    "intents": [
+      {
+        "intentName": "DummyIntent",
+        "intentVersion": "$LATEST"
+      }
+    ],
+    "locale": "en-US",
+    "name": "DummyBot",
+    "voiceId": "Salli",
+    "intents": [
+      {
+        "confirmationPrompt": {
+          "maxAttempts": 2,
+          "messages": [
+            {
+              "content": "Hello!, What can I do for you?",
+              "contentType": "PlainText"
+            },
+            {
+              "content": " Hello my friend!. How can I help you?",
+              "contentType": "PlainText"
+            }
+          ]
+        },
+        "description": "Intent to order a bouquet of flowers for pick up",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "name": "DummyIntent",
+        "rejectionStatement": {
+          "messages": [
+            {
+              "content": "Mmmmm sorry, I don't understand",
+              "contentType": "PlainText"
+            }
+          ]
+        },
+        "sampleUtterances": [
+          "Hello",
+          "Hey there",
+          "Hey"
+        ]
+      }
+    ]
+  }
+
+
+  }
+}

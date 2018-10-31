@@ -13,8 +13,8 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Code:
-        S3Bucket: the bucket where the code is
-        S3Key: the path to the bucket
+        S3Bucket: mrbbucket
+        S3Key: chatbot/bot-src.zip
       Handler: chat-bot-application-main.handler
       Role: !GetAtt ChatBotLambdaRole.Arn
       Runtime: python2.7
@@ -55,7 +55,7 @@ Resources:
                     - lex:Get*
                   Resource: '*'
         - PolicyName: LexMutating
-           PolicyDocument:
+          PolicyDocument:
                Version: 2012-10-17
                Statement:
                    - Effect: Allow
@@ -63,6 +63,6 @@ Resources:
                          - lex:Put*
                          - lex:Delete*
                      Resource:
-                         - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:bot:${NamePrefix}*:*"
-                         - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:intent:${NamePrefix}*:*"
-                         - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:slottype:${NamePrefix}*:*"
+                         - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:bot:FirstChatBot*:*"
+                         - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:intent:FirstChatBot*:*"
+                         - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:slottype:FirstChatBot*:*"
